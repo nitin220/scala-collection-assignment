@@ -7,35 +7,27 @@ package com.knoldus.assignment_4
 class SumAndProduct {
 
 
-  def process(source:List[Int]):Int=
-  {
-    var sum = 0
-    for(element<- 0 to source.length-1){
+  def Sum(updatedList:List[Int]):Double={
 
+          if(updatedList.isEmpty) 0
+          else
+          updatedList.head +  produceSum(updatedList.tail)     //recursion 
+    }   
 
-        sum = sum+source(element)
+   def Product(updatedList:List[Int]):Double={
 
-    }
-    sum
-  }
-  def product(source:List[Int]):Int=
-  {
-    var prod = 1
-    for(element<- 0 to source.length-1){
-
-
-      prod = prod*source(element)
-
-    }
-    prod
-  }
+          if(updatedList.isEmpty) 1
+          else
+          updatedList.head *  produceProduct(updatedList.tail) //recursion
+    } 
+   
 }
 object Source_element{
   def main (args: Array[String] ) {
     val source=List(1,2,3,4,5)
     val obj=new SumAndProduct
-    println("Sum is :" +  obj.process(source))
-    println("Product is :" +  obj.product(source))
+    println("Sum is :" +  obj.Sum(source))
+    println("Product is :" +  obj.Product(source))
 
 
   }

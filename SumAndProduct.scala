@@ -11,14 +11,14 @@ class SumAndProduct {
 
           if(updatedList.isEmpty) 0
           else
-          updatedList.head +  produceSum(updatedList.tail)     //recursion 
+          updatedList.head +  Sum(updatedList.tail)     //recursion 
     }   
 
    def Product(updatedList:List[Int]):Double={
 
           if(updatedList.isEmpty) 1
           else
-          updatedList.head *  produceProduct(updatedList.tail) //recursion
+          updatedList.head *  Product(updatedList.tail) //recursion
     } 
    
 }
